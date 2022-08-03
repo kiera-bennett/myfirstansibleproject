@@ -4,7 +4,29 @@
   remote_user: root
 
   tasks:
+    - name: delete directory
+      file:
+        path: /Users/kiera/Documents/newansiblefolder
+        state: absent
+
     - name: creating folder
       file: dest=/Users/kiera/Documents/newansiblefolder state=directory
+
+    - name: create file with text
+      copy:
+        dest: /Users/kiera/Documents/newansiblefolder/newfilewithtext
+        content: |
+          hello
+    - name: create multiple empty files
+      file:
+        path: /Users/kiera/Documents/newansiblefolder/"{{ item }}"
+        state: touch
+      with_items:
+        - testempty01.txt
+        - testempty02.txt
+        - testempty02.txt
+
+
+
 
 
