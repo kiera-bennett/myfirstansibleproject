@@ -1,0 +1,10 @@
+---
+- name: create folder
+  hosts: local
+  remote_user: root
+
+  tasks:
+    - name: creating folder
+      file: dest=/Users/kiera/Documents/newansiblefolder state=directory
+
+
