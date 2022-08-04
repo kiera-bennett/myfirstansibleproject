@@ -17,6 +17,7 @@
         dest: /Users/kiera/Documents/newansiblefolder/newfilewithtext
         content: |
           hello
+
     - name: create multiple empty files
       file:
         path: /Users/kiera/Documents/newansiblefolder/"{{ item }}"
@@ -26,6 +27,11 @@
         - testempty02.txt
         - testempty03.txt
 
+    - name: hello world module 
+      github_repo:
+      register: result
+
+    - debug: var=result
 
 
 
