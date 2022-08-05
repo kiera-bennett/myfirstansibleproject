@@ -17,6 +17,7 @@
         dest: /Users/kiera/Documents/newansiblefolder/newfilewithtext
         content: |
           hello
+
     - name: create multiple empty files
       file:
         path: /Users/kiera/Documents/newansiblefolder/"{{ item }}"
@@ -27,6 +28,15 @@
         - testempty03.txt
 
 
+    - name: hello world module 
+      helloworld:
+      register: result
 
+    - debug: var=result
+
+    - name: add data to file
+      userdata: 
+       name: Kiera
+       age: 20
 
 
