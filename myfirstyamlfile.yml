@@ -27,12 +27,16 @@
         - testempty02.txt
         - testempty03.txt
 
+
     - name: hello world module 
-      github_repo:
+      helloworld:
       register: result
 
     - debug: var=result
 
-
+    - name: add data to file
+      userdata: 
+       name: Kiera
+       age: 20
 
 
